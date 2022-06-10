@@ -1,0 +1,29 @@
+name: SSH Command
+description: Run commands on a remote host through ssh
+author: Xabier Napal
+
+branding:
+  icon: terminal
+  color: gray-dark
+
+inputs:
+  host:
+    description: ssh host
+    required: true
+  port:
+    description: ssh port
+    required: false
+    default: '22'
+  username:
+    description: ssh username
+    required: true
+  key:
+    description: raw content of ssh private key
+    required: true
+  command:
+    description: command to execute
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
