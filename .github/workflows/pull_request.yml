@@ -1,0 +1,19 @@
+name: Pull request
+on:
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run hadolint
+        uses: hadolint/hadolint-action@v2.1.0
+        with:
+          dockerfile: Dockerfile
+
+      - name: Run shellcheck
+        uses: ludeeus/action-shellcheck@1.1.0
