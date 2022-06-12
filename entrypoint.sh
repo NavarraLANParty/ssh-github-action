@@ -13,7 +13,7 @@ cat > "${SSH_PATH}/config" <<-END
 	  IdentityFile ${SSH_PATH}/id_rsa.key
 END
 
-ssh-keyscan -H "${INPUT_HOST}" -p "${INPUT_PORT}" > "${SSH_PATH}/known_hosts"
+ssh-keyscan -p "${INPUT_PORT}" -H "${INPUT_HOST}" > "${SSH_PATH}/known_hosts"
 
 echo "${INPUT_KEY}" > "${SSH_PATH}/id_rsa.key"
 chmod 600 "${SSH_PATH}/id_rsa.key"
