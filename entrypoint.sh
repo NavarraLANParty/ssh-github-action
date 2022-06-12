@@ -8,8 +8,8 @@ mkdir -p "${SSH_PATH}"
 
 cat > "${SSH_PATH}/config" <<-END
 	Host *
-	  User ${INPUT_USER}
 	  Port ${INPUT_PORT}
+	  User ${INPUT_USERNAME}
 	  IdentityFile ${SSH_PATH}/id_rsa.key
 END
 
